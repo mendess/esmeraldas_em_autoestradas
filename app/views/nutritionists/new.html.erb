@@ -1,0 +1,32 @@
+<h1> Add nutritionist </h1>
+<%= form_with scope: :nutritionist, url: nutritionists_create_path, local: true do |form| %>
+  <p>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  </p>
+  <p>
+  <%= form.label :number %>
+  <%= form.text_field :number %>
+  </p>
+  <p>
+  <%= form.label :clinic %>
+  <%= form.text_field :clinic %>
+  </p>
+  <p>
+  <%= form.label :street %>
+  <%= form.text_field :street %>
+  </p>
+  <p>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+  </p>
+  <p>
+  <%= form.label :personal_page %>
+  <%= form.text_field :personal_page %>
+  </p>
+  <p>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  </p>
+  <p> <%= form.submit :create %> </p>
+<% end %>

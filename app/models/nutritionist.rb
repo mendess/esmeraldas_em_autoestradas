@@ -1,0 +1,2 @@
+class Nutritionist < ApplicationRecord
+end
