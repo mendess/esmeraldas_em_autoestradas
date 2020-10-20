@@ -7,7 +7,7 @@
   <%= f.submit "Search" %>
 <% end %>
 <% @nutritionists.each do |n| %>
-  <div>
+  <div class="nutritionist">
     <div> <!-- parte de cima !-->
       <div><img src="https://cdn.discordapp.com/avatars/261616500283015169/b31841ff18e852c31b45c7b6f7558ad0.webp"/></div> <!-- display: flex !-->
       <div>
@@ -15,8 +15,8 @@
         <p>Nutricionista - <%= n.number %></p>
       </div>
       <div>
-        <button>Marcar consulta</button>
-        <button>Pagina Pessoal</button>
+        <a href="">Marcar consulta</a>
+        <a href="<%= n.personal_page %>">Pagina Pessoal</a>
       </div>
     </div>
     <div>

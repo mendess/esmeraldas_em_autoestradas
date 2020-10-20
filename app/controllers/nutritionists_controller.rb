@@ -3,11 +3,11 @@ class NutritionistsController < ApplicationController
     search_param = params[:search_param]
     location = params[:location]
     @nutritionists = if search_param or location
-      search_param = search_param&.downcase
-      location = location&.downcase
+      search_param = /#{search_param || ""}/i
+      location = /#{location || ""}/i
       Nutritionist
-        .select { |n| n.name.downcase.include? search_param || "" }
-        .select { |n| n.city.downcase.include? location || "" }
+        .select { |n| n.name.match? search_param or n.clinic.match? search_param }
+        .select { |n| n.city.match? location or n.street.match? location }
     else
       Nutritionist.all
     end
