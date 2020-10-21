@@ -1,3 +1,4 @@
+#!/bin/bash
 machine_ip() {
     IP=$(docker inspect rails-postgres |
         jq '.[0].NetworkSettings.Networks.bridge.IPAddress' -r)
@@ -9,7 +10,7 @@ CONTAINER_NAME=rails-postgres
 case "$1" in
     s | shell)
         docker exec -it rails-postgres \
-            psql -U postgres -d esmeraldas_em_autoestradas_development
+            psql -U postgres -d esmeraldas_em_autoestradas_development "${@:2}"
         ;;
     ip)
         machine_ip
