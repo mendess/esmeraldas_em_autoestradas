@@ -1,34 +1,39 @@
-<h1>Nutrium</h1>
-<%= form_with method: "get", local: true do |f| %>
-  <%= f.label "Search for:" %>
-  <%= f.text_field :search_param %>
-  <%= f.label "Location:" %>
-  <%= f.text_field :location %>
-  <%= f.submit "Search" %>
-<% end %>
-<% @nutritionists.each do |n| %>
-  <div class="nutritionist">
-    <div> <!-- parte de cima !-->
-      <div><img src="https://cdn.discordapp.com/avatars/261616500283015169/b31841ff18e852c31b45c7b6f7558ad0.webp"/></div> <!-- display: flex !-->
-      <div>
-        <p><%= n.name %></p>
-        <p>Nutricionista - <%= n.number %></p>
+<div class="search-form">
+  <%= form_with method: "get", local: true do |f| %>
+    <%= f.text_field :search_param, placeholder: "Nutricionista Desportivo...", :class => "search-box" %>
+    <%= f.text_field :location, placeholder: "Localização", :class => "search-box"  %>
+    <%= f.submit "Pesquisar", :class => "search-button" %>
+  <% end %>
+</div>
+<div class="nutritionists">
+  <% @nutritionists.each do |n| %>
+    <div class="nutritionist">
+      <div class="upper-half">
+        <div class="nutritionist-img">
+          <img src="https://cdn.discordapp.com/avatars/261616500283015169/b31841ff18e852c31b45c7b6f7558ad0.webp"/>
+        </div>
+        <div class="nutritionist-info">
+          <div>
+            <p class="green-accent"><%= n.name %></p>
+            <p class="orange-accent">Nutricionista - <%= n.number %></p>
+          </div>
+          <div class="nutr-buttons">
+            <a href=""><button class="marcar-consulta">Marcar consulta</button></a><br>
+            <a href="<%= n.personal_page %>"><button class="pagina-pessoal">Página Pessoal</button></a>
+          </div>
+        </div>
       </div>
-      <div>
-        <a href="">Marcar consulta</a>
-        <a href="<%= n.personal_page %>">Pagina Pessoal</a>
+      <div class="lower-half">
+        <div> <!-- left side -->
+          <p class="green-accent"><%= n.clinic %></p>
+          <p><%= n.street %></p>
+          <p><%= n.city %></p>
+        </div>
+        <div>
+          <p>DROPDOWN</p>
+          <p><%= n.price %>€</p>
+        </div>
       </div>
     </div>
-    <div>
-      <div> <!-- left side !-->
-        <p><%= n.clinic %></p>
-        <p><%= n.street %></p>
-        <p><%= n.city %></p>
-      </div>
-      <div>
-        <p>DROPDOWN</p>
-        <p><%= n.price %></p>
-      </div>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

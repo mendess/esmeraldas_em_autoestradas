@@ -8,7 +8,8 @@ CONTAINER_NAME=rails-postgres
 
 case "$1" in
     s | shell)
-        docker exec -it rails-postgres psql -U postgres
+        docker exec -it rails-postgres \
+            psql -U postgres -d esmeraldas_em_autoestradas_development
         ;;
     ip)
         machine_ip

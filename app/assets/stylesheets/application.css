@@ -13,26 +13,34 @@
  *= require_tree .
  *= require_self
  */
-ul.nav-bar {
-  list-style-type: none;
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: green;
 }
 
-li.nav-bar {
-  float: left;
-}
-
-li.nav-bar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.logo, .signup {
+  color: #edf0f1;
   text-decoration: none;
 }
 
-li.nav-bar a:hover {
-  background-color: #111;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-image: linear-gradient(to right, #3fde84, #3fbb99);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+button.signup {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 25px;
 }
