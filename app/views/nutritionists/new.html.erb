@@ -28,5 +28,13 @@
   <%= form.label :price %>
   <%= form.text_field :price %>
   </p>
+  <p>
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+  </p>
+  <p>
+  <%= form.label :tags %>
+  <%= form.text_field :tags %>
+  </p>
   <p> <%= form.submit :create %> </p>
 <% end %>

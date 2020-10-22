@@ -26,7 +26,12 @@ class NutritionistsController < ApplicationController
   def new; end
 
   def create
-    if Nutritionist.new(nutr_params).save
+    @nutr = Nutritionist.new(nutr_params)
+    params[:nutritionist][:tags]&.split
+      .map(&:downcase)
+      .map { |t| Tag.find_or_create_by(name: t) }
+      .each { |t| @nutr.tags << t }
+    if @nutr.save
       render "new"
     else
       render "index"
@@ -44,6 +49,7 @@ class NutritionistsController < ApplicationController
       :city,
       :personal_page,
       :price,
+      :avatar,
     )
   end
 end

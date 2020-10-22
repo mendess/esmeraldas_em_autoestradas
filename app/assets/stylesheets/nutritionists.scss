@@ -35,6 +35,12 @@
   border-radius: 50%;
 }
 
+.nutritionist-avatar {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
 .nutritionist-info {
   min-width: 70%;
   justify-content: space-between;
