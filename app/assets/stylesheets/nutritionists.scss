@@ -2,29 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.search-form {
+body {
+  background-color: #e4e6ec;
+}
+div.search-form {
   padding: 30px;
   background-image: linear-gradient(to right, #51d39a, #3fbb99);
   justify-content: center;
   text-align: center;
 }
 
-.search-box, .search-button {
-  height: 40px;
-  width: 12%;
-  min-width: 200px;
+form.search-form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box-search, .search-box-location, .search-button {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  border: none;
+  padding: 20px;
+}
+
+.search-box-div {
+  padding: 10px;
+}
+
+.search-box-search {
+  padding-left: 43px;
+  background: url(https://cdn.discordapp.com/attachments/419496159111806976/768909722790133770/magnifying-glass_2.svg) no-repeat scroll 5px 13px;
+  background-size: 35px;
+  background-color: white;
+}
+
+.search-box-location {
+  padding-left: 43px;
+  background: url(https://cdn.discordapp.com/attachments/419496159111806976/768909522982666280/pin_2.svg) no-repeat scroll 5px 13px;
+  background-size: 35px;
+  background-color: white;
+}
+
+.search-button {
+  background-color: #e99f7a;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.search-box-icon {
+  position: absolute;
+  width: 30px;
+  padding-left: 10px;
+  padding-top: 13px;
 }
 
 .nutritionists {
   display: block;
   margin: auto;
-  width: 70%;
+  max-width: 800px;
 }
 
 .nutritionist {
-  padding: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px;
   min-width: 200px;
-  width: 1000px;
+  width: 100%;
 }
 
 .nutritionist-img {
@@ -42,10 +87,10 @@
 }
 
 .nutritionist-info {
-  min-width: 70%;
   justify-content: space-between;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .upper-half {
@@ -54,8 +99,11 @@
 
 .lower-half {
   display: flex;
-  justify-content: space-around;
-  max-width: 70%;
+}
+
+.nutricionist-location {
+  padding-left: 120px;
+  padding-right: 250px;
 }
 
 .nutr-buttons {
@@ -73,19 +121,19 @@
 }
 
 .pagina-pessoal {
-  background-color: rgba(37.6, 74.1, 63.5, 0.3);
+  background-color: #d9f0e6;
 }
 
 .marcar-consulta {
-  background-color: rgba(91.4, 62.4, 47.8, 0.3);
+  background-color: #eedfd7;
 }
 
 .green-accent {
-  color: rgb(37.6, 74.1, 63.5);
+  color: #64af9c;
   font-weight: bold;
 }
 
 .orange-accent {
-  color: rgb(91.4, 62.4, 47.8);
+  color: #dba598;
   font-weight: bold;
 }

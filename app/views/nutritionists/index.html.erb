@@ -1,14 +1,20 @@
 <div class="search-form">
-  <%= form_with method: "get", local: true do |f| %>
-    <%= f.text_field :search_param,
-      value: params[:search_param],
-      placeholder: "Nutricionista Desportivo...",
-      :class => "search-box" %>
-    <%= f.text_field :location,
-      value: params[:location],
-      placeholder: "Localização",
-      :class => "search-box"  %>
-    <%= f.submit "Pesquisar", :class => "search-button" %>
+  <%= form_with method: "get", local: true, :class => "search-form" do |f| %>
+    <div class="search-box-div">
+      <%= f.text_field :search_param,
+        value: params[:search_param],
+        placeholder: "Nutricionista Desportivo...",
+        :class => "search-box-search" %>
+    </div>
+    <div class="search-box-div">
+      <%= f.text_field :location,
+        value: params[:location],
+        placeholder: "Localização",
+        :class => "search-box-location"  %>
+    </div>
+    <div class="search-box-div">
+      <%= f.submit "Pesquisar", :class => "search-button" %>
+    </div>
   <% end %>
 </div>
 <div class="nutritionists">
@@ -28,13 +34,13 @@
             <p class="orange-accent">Nutricionista - <%= n.number %></p>
           </div>
           <div class="nutr-buttons">
-            <a href=""><button class="marcar-consulta">Marcar consulta</button></a><br>
-            <a href="<%= n.personal_page %>"><button class="pagina-pessoal">Página Pessoal</button></a>
+            <a href=""><button class="marcar-consulta orange-accent">Marcar consulta</button></a><br>
+            <a href="<%= n.personal_page %>"><button class="pagina-pessoal green-accent">Página Pessoal</button></a>
           </div>
         </div>
       </div>
       <div class="lower-half">
-        <div> <!-- left side -->
+        <div class="nutricionist-location"> <!-- left side -->
           <p class="green-accent"><%= n.clinic %></p>
           <p><%= n.street %></p>
           <p><%= n.city %></p>
