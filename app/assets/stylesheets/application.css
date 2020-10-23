@@ -42,4 +42,14 @@ button.signup {
   cursor: pointer;
   border-radius: 50px;
   font-size: 25px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.signup strong {
+  padding-left: 10px;
+}
+
+.signup-arrow {
+  padding-left: 30px;
 }

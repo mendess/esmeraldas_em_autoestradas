@@ -60,7 +60,7 @@ form.search-form {
 .nutritionists {
   display: block;
   margin: auto;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .nutritionist {
@@ -69,7 +69,7 @@ form.search-form {
   border-radius: 5px;
   margin: 10px;
   min-width: 200px;
-  width: 100%;
+  display: flex;
 }
 
 .nutritionist-img {
@@ -87,23 +87,26 @@ form.search-form {
 }
 
 .nutritionist-info {
+  width: 500px;
+  padding-left: 30px;
+}
+
+.upper-half {
   justify-content: space-between;
   display: flex;
   align-items: center;
   width: 100%;
-}
-
-.upper-half {
-  display: flex;
+  margin:auto;
 }
 
 .lower-half {
   display: flex;
+  justify-content: space-between;
 }
 
-.nutricionist-location {
-  padding-left: 120px;
-  padding-right: 250px;
+.nutritionist-location {
+  display: flex;
+  padding-left: 30px;
 }
 
 .nutr-buttons {
@@ -124,8 +127,18 @@ form.search-form {
   background-color: #d9f0e6;
 }
 
+.pagina-pessoal:hover {
+  color: white;
+  background-color: #6dc59f;
+}
+
 .marcar-consulta {
   background-color: #eedfd7;
+}
+
+.marcar-consulta:hover {
+  color: white;
+  background-color: #c99b82;
 }
 
 .green-accent {
@@ -136,4 +149,90 @@ form.search-form {
 .orange-accent {
   color: #dba598;
   font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  background-color: white;
+}
+
+.pagination-inner {
+  margin: auto;
+  display: flex;
+  max-width: 800px;
+}
+
+.pagination-page {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+div.pagination-page a {
+  text-decoration: none;
+  color: black;
+}
+
+.selected {
+  background-color: #d9f0e6;
+}
+
+div.selected a {
+  color: #64af9c;
+  font-weight: bold;
+}
+
+.pagination-right {
+  width: 15px;
+  padding: 20px;
+}
+
+.dropbtn {
+  background-color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+
+img.booking-icons {
+  padding-right: 5px;
+}
+
+div.booking-icons {
+  margin: 5px;
+  display: flex;
+}
+
+.booking {
+  padding-right: 100px;
 }

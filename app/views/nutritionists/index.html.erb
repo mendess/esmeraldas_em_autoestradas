@@ -20,16 +20,16 @@
 <div class="nutritionists">
   <% @nutritionists.each do |n| %>
     <div class="nutritionist">
-      <div class="upper-half">
-        <div class="nutritionist-img">
-          <% if n.avatar.attached? %>
-            <%= image_tag n.avatar, :class => "nutritionist-avatar" %>
-          <% else %>
-            <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhumancoders-formations.s3.amazonaws.com%2Fuploads%2Fcourse%2Flogo%2F1%2Fformation-ruby-on-rails.png", :class => "nutritionist-avatar" %>
-          <% end %>
-        </div>
-        <div class="nutritionist-info">
-          <div>
+      <div class="nutritionist-img">
+        <% if n.avatar.attached? %>
+          <%= image_tag n.avatar, :class => "nutritionist-avatar" %>
+        <% else %>
+          <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhumancoders-formations.s3.amazonaws.com%2Fuploads%2Fcourse%2Flogo%2F1%2Fformation-ruby-on-rails.png", :class => "nutritionist-avatar" %>
+        <% end %>
+      </div>
+      <div>
+        <div class="upper-half">
+          <div class="nutritionist-info">
             <p class="green-accent"><%= n.name %></p>
             <p class="orange-accent">Nutricionista - <%= n.number %></p>
           </div>
@@ -38,18 +38,56 @@
             <a href="<%= n.personal_page %>"><button class="pagina-pessoal green-accent">Página Pessoal</button></a>
           </div>
         </div>
-      </div>
-      <div class="lower-half">
-        <div class="nutricionist-location"> <!-- left side -->
-          <p class="green-accent"><%= n.clinic %></p>
-          <p><%= n.street %></p>
-          <p><%= n.city %></p>
-        </div>
-        <div>
-          <p>DROPDOWN</p>
-          <p><%= n.price %>€</p>
+        <div class="lower-half">
+          <div class="nutritionist-location"> <!-- left side -->
+            <div>
+              <%= image_tag 'pin_hollow.svg', :width => "20px" %>
+            </div>
+            <div>
+              <p class="green-accent">
+              <%= n.clinic %>
+              </p>
+              <p><%= n.street %></p>
+              <p><%= n.city %></p>
+            </div>
+          </div>
+          <div class="booking">
+            <div class="booking-icons">
+              <%= image_tag 'case.svg', :class => "booking-icons", :width => "20px" %>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Consulta domiciliar
+                  <%= image_tag 'down_arrow.svg', :style => "padding-left:10px", :width => "10px" %>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Consulta consultório</a>
+                </div>
+              </div>
+            </div>
+            <div class="booking-icons">
+              <%= image_tag 'money.svg', :class => "booking-icons", :width => "20px" %>
+              <%= n.price %>€
+            </div>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
+</div>
+<div class="pagination">
+  <div class="pagination-inner">
+    <div class="pagination-page"><a href="#">1</a></div>
+    <div class="pagination-page"><a href="#">2</a></div>
+    <div class="pagination-page"><a href="#">3</a></div>
+    <div class="pagination-page selected"><a href="#">4</a></div>
+    <div class="pagination-page"><a href="#">5</a></div>
+    <div class="pagination-page"><a href="#">6</a></div>
+    <div class="pagination-page"><a href="#">7</a></div>
+    <div class="pagination-page"><a href="#">8</a></div>
+    <div class="pagination-page"><a href="#">9</a></div>
+    <div class="pagination-page"><a href="#">10</a></div>
+    <div class="pagination-right">
+      <%= image_tag 'right_arrow.svg' %>
+    </div>
+  </div>
 </div>
